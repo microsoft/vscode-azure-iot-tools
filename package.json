@@ -1,17 +1,21 @@
 {
     "name": "azure-iot-tools",
-    "displayName": "Azure IoT Tools",
-    "description": "The ultimate collection of extensions for working with Azure IoT in VS Code!",
     "version": "0.0.1",
     "publisher": "vsciot-vscode",
+    "displayName": "Azure IoT Tools",
+    "description": "The ultimate collection of extensions for working with Azure IoT in VS Code!",
     "license": "SEE LICENSE IN LICENSE",
-    "galleryBanner": {
-        "color": "#0072c6",
-        "theme": "dark"
-    },
     "icon": "azure-iot-tools-icon.png",
+    "repository": {
+        "url": "https://github.com/Microsoft/vscode-azure-iot-tools"
+    },
+    "homepage": "https://github.com/Microsoft/vscode-azure-iot-tools",
+    "bugs": {
+        "url": "https://github.com/Microsoft/vscode-azure-iot-tools/issues"
+    },
     "keywords": [
-        "azure"
+        "azure",
+        "iot"
     ],
     "categories": [
         "Azure",
@@ -20,7 +24,7 @@
     "engines": {
         "vscode": "^1.26.0"
     },
-    "extensionPack": [ 
+    "extensionPack": [
         "vsciot-vscode.azure-iot-toolkit",
         "vsciot-vscode.azure-iot-edge",
         "vsciot-vscode.vscode-iot-workbench"
