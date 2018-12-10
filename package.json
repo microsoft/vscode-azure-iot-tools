@@ -28,5 +28,33 @@
         "vsciot-vscode.azure-iot-toolkit",
         "vsciot-vscode.azure-iot-edge",
         "vsciot-vscode.vscode-iot-workbench"
-    ]
+    ],
+    "contributes": {
+        "commands": [
+            {
+                "command": "azure-iot-tools.showWelcomePage",
+                "title": "Show Welcome Page"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "tsc -p ./",
+        "compile": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "tslint": "tslint -t verbose src/**/*.ts test/**/*.ts --exclude src/**/*.d.ts",
+        "version": "tsc -v"
+      },
+    "activationEvents": [
+        "*",
+        "onCommand:azure-iot-tools.showWelcomePage"
+    ],
+    "main": "./out/src/extension",
+    "devDependencies": {
+        "@types/mocha": "^2.2.32",
+        "@types/node": "^10.12.3",
+        "mocha": "^5.1.1",
+        "tslint": "^4.5.1",
+        "typescript": "^2.2.1",
+        "vscode": "^1.1.17"
+    }
 }
