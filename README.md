@@ -1,124 +1,73 @@
 # Azure IoT Tools for Visual Studio Code
 [Microsoft Azure IoT](https://azure.microsoft.com/en-us/overview/iot/
-) support for Visual Studio Code is provided through a rich set of extensions that make it easy to interact with Azure IoT Hub that power your IoT applications.
+) support for Visual Studio Code is provided through a rich set of extensions that make it easy to discover and interact with Azure IoT Hub that power your IoT Edge and device applications.
 
-> If you do not have an Azure subscription, [sign up today](https://azure.microsoft.com/en-us/free/?b=16.48) for a free account. You'll get 12 months of popular free services, **$200** in Azure Credits to try out any combination of Azure services, and access to 25+ always free services such as Azure IoT Hub, DevTest Labs, and Service Fabric.
+> If you do not have an Azure subscription, [sign up today](https://azure.microsoft.com/en-us/free/?b=16.48) for a free account. You'll get 12 months of popular free services, **$200** in Azure Credits to try out any combination of Azure services, and access to free services such as Azure IoT Hub, Azure IoT Edge, etc.
 
+## Azure IoT Service
+- Develop and connect your [Azure loT Applications](https://azure.microsoft.com/en-us/overview/iot/) to Azure using the [Azure loT Toolkit](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit). With this extension, you can interact with an Azure loT Hub, manage connected devices, and enable distributed tracing for your Azure loT applications.
 
-## Extensions Included
+- Develop and debug [Certifies Azure loT Devices](https://catalog.azureiotsolutions.com/alldevices) (including [MXChip loT DevKit](http://www.mxchip.com/az3166), [ESP32](https://catalog.azureiotsolutions.com/details?title=ESP32_DevKitC&source=all-devices-page), [Raspberry Pi](https://www.adafruit.com/category/288)) to Azure using the [Azure loT Device Workbench](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.vscode-iot-workbench). The loT Device Workbench extension makes it easy to code, build, deploy and debug your loT applications with popular loT development boards.
 
-By installing Azure IoT Tools, the following extensions are installed:
-
-- [📦 Azure IoT Toolkit Extension ](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit)
-    - IoT Device Management
-    - IoT Edge Management
-    - Module management
-    - Interact with Azure IoT Hub
-    - Interact with Azure IoT Edge
-    - IoT Hub Code Generation
-
-- [📦 Azure IoT Edge Extension ](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge)
-    - Create new IoT Edge solution
-    - Add new IoT Edge module to Edge solution
-    - Build and publish IoT Edge modules
-    - Debug IoT Edge modules locally and remotely
-    - IntelliSense and code snippets for the deployment manifest
-    - Manage IoT Edge devices and modules in IoT Hub (with Azure IoT Toolkit)
-    - Deploy IoT solutions to IoT Edge devices
-
-- [📦 Azure IoT Workbench ](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.vscode-iot-workbench)
-    - Popular IoT development kits / boards supported
-    - Automatically detects development kits
-    - Full-fledged IntelliSense support when developing on development kits 
-    - Flexible architecture to support more device platform compilers
-    - Sample code and mini solutions
-    - Cloud solution templates
-
-## Azure IoT Toolkit Extension
-
-[ Azure IoT Toolkit Extension ](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit) can help user to interact with Azure IoT Hub, management IoT Device, management IoT Edge, and generation code.
-
-### Device Explorer
-The [Wiki page](https://github.com/Microsoft/vscode-azure-iot-toolkit/wiki) includes a comprehensive getting started guide as well as detailed usage instructions of the following features:
-
-* IoT Hub management
-* Device management
-* Module management
-* Interact with Azure IoT Hub
-* Interact with Azure IoT Edge
-
-### Code Generation
-* Right-click your device and select Generate Code, then select language and code template, code will be generated in editor area. Supporting language including C#, Go, HTTP, Java, Node.js, PHP, Python and Ruby.
-
-* Available Code snippets are listed below
-
-    | Trigger | Content |
-    | ---- | ---- |
-    | iotSendD2CMessage | Send D2C message to IoT Hub |
-    | iotMonitorD2CMessage | Monitor D2C message for IoT Hub |
-    | iotSendC2DMessage | Send C2D message to device |
-    | iotMonitorC2DMessage | Monitor C2D message from IoT Hub |
-    | iotCallDirectMethods | Send direct methods to device |
-    | iotReceiveDirectMethods | Receive direct methods from IoT Hub |
-
-> After code snippet is created, you need to install corresponding npm package (e.g. [azure-iot-device-mqtt](https://www.npmjs.com/package/azure-iot-device-mqtt)) to run the code snippet. If you want to 'Run Code' directly, you need to install [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner).
-
-## Azure IoT Edge Extension
-
-[Azure IoT Edge extension](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge) makes it easy to code, build, deploy, and debug your [IoT Edge](https://docs.microsoft.com/azure/iot-edge/how-iot-edge-works) solutions in Visual Studio Code, by providing a rich set of functionalities:
-
-- Create new IoT Edge solution
-- Add new IoT Edge module to Edge solution
-- Build and publish IoT Edge modules
-- Debug IoT Edge modules locally and remotely
-- IntelliSense and code snippets for the deployment manifest
-- Manage IoT Edge devices and modules in IoT Hub
-- Deploy IoT solutions to IoT Edge devices
-
-Click the links below to learn how to develop, debug and deploy IoT Edge modules.
-
-- [C# module](https://docs.microsoft.com/azure/iot-edge/tutorial-csharp-module)
-- [C# Functions on IoT Edge](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-function)
-- [Python module](https://docs.microsoft.com/azure/iot-edge/tutorial-python-module)
-- [Node.js module](https://docs.microsoft.com/azure/iot-edge/tutorial-node-module)
-- [Java module](https://docs.microsoft.com/azure/iot-edge/tutorial-java-module)
-- [C module](https://docs.microsoft.com/azure/iot-edge/tutorial-c-module)
-
-## Azure IoT Workbench Extension
-
-[ IoT Workbench extension ](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.vscode-iot-workbench#user-content-setup-guide) provides an integration development environment makes it easy to code, build, deploy and debug on IoT development kits / boards with multiple Azure services supported. IoT Workbench aims to support multiple popular IoT development boards and kits. It currently supports following IoT hardware:
-- [MXChip IoT DevKit](https://aka.ms/iot-devkit)
-- [teXXmo IoT button](https://aka.ms/button)
-- [Raspberry Pi](https://www.raspberrypi.org/)
-- [ESP32](https://www.espressif.com/en/products/hardware/esp-wroom-32/overview)
-
-Device
-- Popular IoT development kits / boards supported (e.g. MXChip IoT DevKit, ESP32 DevKit, Raspberry Pi, Azure IoT Button)
-- Automatically detects development kits and set up their toolchains / SDKs 
-- Full-fledged IntelliSense support when developing on development kits 
-- Flexible architecture to support more device platform compilers 
-
-Cloud 
-- Easy access to sample code and mini solutions guide learnings of Azure IoT services (e.g. IoT Hub, IoT Central, Solution Accelerator).
-- Cloud solution templates that support quickly scaffold of IoT solution.
+- Develop and deploy artificial intelligence and your custom logic to [Azure loT Edge](https://azure.microsoft.com/en-us/services/iot-edge/) with [Azure loT Edge for VS Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge). Azure loT Edge extension makes it easy to code, build, deploy, and debug your loT Edge applications.
 
 ## Installation
-
 By installing this extension you will install all of the extensions listed above. Some of these extensions will have a dependency on the [Azure Account extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account) to provide a single Azure login and subscription filtering experience.
 
-## Contributing
+You can easily uninstall individual extensions if you are not interested in using them, without affecting other extensions provided by this pack. You can uninstall all of the extensions by uninstalling the Azure Tools extension.
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.microsoft.com.
+## Setup Azure IoT Hub Connection String
+After successfully installing this extension, you can follow the steps below to setup your IoT Hub connection string:
 
-When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+1. In Explorer of VS Code, click "Azure IoT Hub Devices" in the bottom left corner.
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+    ![Click Device Explorer](images/device-explorer-click.png)
+
+2. Click "Set IoT Hub Connection String" in context menu.
+
+    ![Set Connection String](images/set-connection-string.png)
+
+3. An input box will pop up, then enter your IoT Hub Connection String (It is one-time configuration, and please make sure it is **IoT Hub Connection String** and not **Device Connection String**. The format is `HostName=<my-hub>.azure-devices.net;SharedAccessKeyName=<my-policy>;SharedAccessKey=<my-policy-key>`).
+
+    ![Enter Connection String](images/enter-connection-string.png)
+
+4. The device list will be shown.
+
+    ![Device Explorer](images/device-explorer.png)
+
+5. Then you can manage your devices and interact with Azure IoT Hub through context menu.
+
+> **NOTE**: You could also go to **File** > **Preferences** > **Settings** (**Code** > **Preferences** > **Settings**), and update the configuration of `azure-iot-toolkit.iotHubConnectionString` to change your IoT Hub Connection String.
+
+### Sign in to Azure
+
+Instead of copying and pasting to set IoT Hub Connection String, you could sign in to Azure and select IoT Hub from your Azure Subscription.
+
+1. Click "Select IoT Hub" in context menu.
+
+    ![Select IoT Hub](images/select-iot-hub.png)
+
+2. If you have not signed in to Azure, a pop-up will show to let you sign in to Azure.
+3. After signing in, your Azure Subscription list will be shown, then select an Azure Subscription.
+4. Your IoT Hub list will be shown, then select an IoT Hub.
+5. The device list will be shown.
+
+
+## Command Palette
+You can access almost all Azure IoT Services provided by these extensions through the Command Palette. Simply press F1, then type in **IoT** to find available commands.
+
+  ![Select IoT Hub](images/command-palette.png)
+
+
+## Contributing 
+
+Got a suggestion for the Azure IoT Tools extension? Submit a new issue and a PR with an updated `package.json` and `README.md` and we'll take a look! 
+
+Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit https://cla.microsoft.com.
+
+When you submit a pull request, a CLA-bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repos using our CLA.
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 ## License
 
