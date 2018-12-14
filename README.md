@@ -21,15 +21,19 @@ After successfully installing this extension, you can follow the steps below to 
 
 #### Setup Azure IoT Hub through Connection String
 1. In Explorer of VS Code, click "Azure IoT Hub Devices" in the bottom left corner.
+
     ![Click Device Explorer](images/device-explorer-click.png)
 
 2. Click "Set IoT Hub Connection String" in context menu.
+
     ![Set Connection String](images/set-connection-string.png)
 
 3. An input box will pop up, then enter your IoT Hub Connection String (It is one-time configuration, and please make sure it is **IoT Hub Connection String** and not **Device Connection String**. The format is `HostName=<my-hub>.azure-devices.net;SharedAccessKeyName=<my-policy>;SharedAccessKey=<my-policy-key>`).
+
     ![Enter Connection String](images/enter-connection-string.png)
 
 4. The device list will be shown.
+
     ![Device Explorer](images/device-explorer.png)
 
 5. Then you can manage your devices and interact with Azure IoT Hub through context menu.
@@ -40,25 +44,32 @@ After successfully installing this extension, you can follow the steps below to 
 
 Instead of copying and pasting to set IoT Hub Connection String, you can sign in to Azure and select IoT Hub from your Azure Subscription.
 1. In Explorer of VS Code, click "Azure IoT Hub Devices" in the bottom left corner.
+
     ![Click Device Explorer](images/device-explorer-click.png)
 
 2. Click "Select IoT Hub" in context menu.
+
     ![Use Select IoT Hub](images/select-iot-hub.png)
 
 3. If you have not signed in to Azure, a pop-up will show to let you sign in to Azure.
+
     ![Select IoT Hub](images/sign-in.png)
 
 4. After signing in, your Azure Subscription list will be shown, then select an Azure Subscription.
+
     ![Select Subscription](images/select-subscription.png)
 
 5. Your IoT Hub list will be shown, then select an IoT Hub.
+
     ![Select IoT Hub](images/select-iothub.png)
 
 6. The device list will be shown.
+
     ![Device Explorer](images/device-explorer.png)
 
 ## Command Palette
 You can access almost all Azure IoT Services provided by these extensions through the Command Palette. Simply press F1, then type in **IoT** to find available commands.
+
   ![Select IoT Hub](images/command-palette.png)
 
 
