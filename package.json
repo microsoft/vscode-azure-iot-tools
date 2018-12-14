@@ -33,7 +33,7 @@
         "commands": [
             {
                 "command": "azure-iot-tools.showWelcomePage",
-                "title": "Show Welcome Page"
+                "title": "Azure IoT Tools: Show Welcome Page"
             }
         ]
     },
