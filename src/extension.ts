@@ -6,10 +6,10 @@ import { WelcomePage } from "./welcomePage";
 
 export function activate(context: vscode.ExtensionContext) {
     // Disable welcome page before it is ready
-    //const welcomePage: WelcomePage = new WelcomePage(context);
-    //welcomePage.checkAndShow();
+    // const welcomePage: WelcomePage = new WelcomePage(context);
+    // welcomePage.checkAndShow();
     let disposable = vscode.commands.registerCommand("azure-iot-tools.showWelcomePage", () => {
-        //welcomePage.show();
+        // welcomePage.show();
     });
     context.subscriptions.push(disposable);
 }

@@ -10,6 +10,7 @@ before_install:
   sh -e /etc/init.d/xvfb start; sleep 3; fi
 install:
 - npm install
+- npm run tslint
 - npm install -g vsce
 script:
 - vsce package
