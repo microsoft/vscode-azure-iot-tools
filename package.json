@@ -45,12 +45,12 @@
         "tslint": "tslint -t verbose src/**/*.ts test/**/*.ts --exclude src/**/*.d.ts",
         "test": "npm run compile && node ./node_modules/vscode/bin/test",
         "version": "tsc -v"
-      },
+    },
     "activationEvents": [
         "*",
         "onCommand:azure-iot-tools.showWelcomePage"
     ],
-    "main": "./out/src/extension",
+    "main": "./out/extension",
     "devDependencies": {
         "typescript": "^2.6.1",
         "vscode": "^1.1.21",
