@@ -54,7 +54,7 @@ Instead of copying and pasting to set IoT Hub Connection String, you can sign in
 ![Select IoT Hub](images/select-iothub.gif)
 
 ## Command Palette
-You can access almost all Azure IoT Services provided by these extensions through the Command Palette. Simply press F1, then type in **IoT** to find available commands.
+You can access almost all Azure IoT development functionalities provided by these extensions through the Command Palette. Simply press F1, then type in **IoT** to find available commands.
 
 ![Select IoT Hub](images/command-palette.png)
 
