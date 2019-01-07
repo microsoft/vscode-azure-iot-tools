@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "publisher": "vsciot-vscode",
     "displayName": "Azure IoT Tools",
-    "description": "The ultimate collection of extensions for working with Azure IoT in VS Code!",
+    "description": "Manage IoT devices, connect them to cloud, deploy AI into IoT Edge and more, all on Azure IoT, all from VS Code, in this one extension from Microsoft.",
     "license": "SEE LICENSE IN LICENSE",
     "icon": "azure-iot-tools-icon.png",
     "repository": {
