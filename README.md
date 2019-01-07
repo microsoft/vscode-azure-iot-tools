@@ -4,8 +4,8 @@
 
 > If you do not have an Azure subscription, [sign up today](https://azure.microsoft.com/en-us/free/?b=16.48) for a free account. You'll get 12 months of popular free services, **$200** in Azure Credits to try out any combination of Azure services, and access to free services such as Azure IoT Hub, Azure IoT Edge, etc.
 
-## Azure IoT Services
-- Develop and connect your [Azure loT Applications](https://azure.microsoft.com/en-us/overview/iot/) to Azure using the [Azure loT Toolkit](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit). With this extension, you can interact with an Azure loT Hub, manage connected devices, and enable distributed tracing for your Azure loT applications.
+## Azure IoT development in VS Code
+- Develop and connect your [Azure loT Applications](https://azure.microsoft.com/en-us/overview/iot/) to Azure using the [Azure loT Hub Toolkit](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit). With this extension, you can interact with an Azure loT Hub, manage connected devices, and enable distributed tracing for your Azure loT applications.
 
 - Develop and debug [Certifies Azure loT Devices](https://catalog.azureiotsolutions.com/alldevices) (including [MXChip loT DevKit](http://www.mxchip.com/az3166), [ESP32](https://catalog.azureiotsolutions.com/details?title=ESP32_DevKitC&source=all-devices-page), [Raspberry Pi](https://www.adafruit.com/category/288)) to Azure using the [Azure loT Device Workbench](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.vscode-iot-workbench). The loT Device Workbench extension makes it easy to code, build, deploy and debug your loT applications with popular loT development boards.
 
