@@ -72,6 +72,7 @@ header p {
 
 #content {
     display: table;
+    min-width: 900px;
 }
 
 #title-area,
@@ -207,7 +208,19 @@ header p {
     margin: 0;
 }
 
-#tutorial h3 {
+#simulation-tutorial{
+    display: block;
+}
+
+#edge-tutorial{
+    display: none;
+}
+
+#device-tutorial{
+    display: none;
+}
+
+#simulation-tutorial h3, #edge-tutorial h3, #device-tutorial h3{
     font-family: "Segoe UI Light", sans-serif;
     font-size: 20px;
     text-align: left;
@@ -240,6 +253,13 @@ footer {
     line-height: 24px;
 }
 
+#whats-new h3{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    line-height: 24px;
+}
+
 #resources>div {
     margin-top: 9px;
 }
@@ -261,6 +281,10 @@ footer {
     border: 0;
     border-radius: 5px;
     text-decoration: none;
+}
+
+.list-heading {
+    font-weight: normal;
 }
 
 .vscode-dark #back-to-top,
@@ -285,4 +309,223 @@ footer {
 
 .vscode-dark {
     background-color: #1E1E1E;
+}
+
+.vscode-light .pivotTabs ul {
+    margin: 24px 0 40px;
+    border-bottom: 1px solid hsla(0, 0%, 89%, 1);
+    padding-left: 0;
+}
+
+.vscode-dark .pivotTabs ul {
+    margin: 24px 0 40px;
+    border-bottom: 1px solid hsla(0, 0%, 47%, 1);
+    padding-left: 0;
+}
+
+.pivotTabs li {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 1.68;
+    list-style: none;
+    margin: 0 4px -1px 0;
+    padding: 5px 41px 0;
+}
+
+.pivotTabs li a {
+    font-size: 20px;
+}
+
+.pivotTabs li:active,.pivotTabs li:hover {
+    background-color: rgba(0,80,197,.07)
+}
+
+.vscode-light .pivotTabs li.selected {
+    border-color: hsla(206, 100%, 35%, 1) hsla(0, 0%, 89%, 1) hsla(0, 0%, 100%, 1);
+    border-style: solid;
+    border-width: 2px 1px 1px;
+    padding: 0 40px
+}
+
+.vscode-dark .pivotTabs li.selected {
+	border-color: hsla(206, 0%, 47%, 1) hsla(0, 0%, 47%, 1) hsl(0, 0%, 12%);  
+	border-style: solid;
+    border-width: 2px 1px 3px;
+    padding: 0 40px
+}
+
+.pivotTabs li.selected a {
+    color: hsla(0, 0%, 0%, 1);
+    color: var(--text)
+}
+
+.pivotTabs a,.pivotTabs a:active,.pivotTabs a:hover,.pivotTabs a:visited {
+    color: hsla(0, 0%, 37%, 1);
+    color: var(--text-subtle);
+    text-decoration: none
+}
+
+blockquote {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.vscode-light .hljs {
+	display: block;
+	overflow-x: auto;
+	padding: 0.5em;
+	color: #000;
+	background: #f8f8ff
+}
+
+.vscode-light .hljs-comment,
+.vscode-light .hljs-quote {
+	color: #408080;
+	font-style: italic
+}
+
+.vscode-light .hljs-keyword,
+.vscode-light .hljs-selector-tag,
+.vscode-light .hljs-literal,
+.vscode-light .hljs-subst {
+	color: #954121
+}
+
+.vscode-light .hljs-number {
+	color: #40a070
+}
+
+.vscode-light .hljs-string,
+.vscode-light .hljs-doctag {
+	color: #219161
+}
+
+.vscode-light .hljs-selector-id,
+.vscode-light .hljs-selector-class,
+.vscode-light .hljs-section,
+.vscode-light .hljs-type {
+	color: #19469d
+}
+
+.vscode-light .hljs-params {
+	color: #00f
+}
+
+.vscode-light .hljs-title {
+	color: #458;
+	font-weight: bold
+}
+
+.vscode-light .hljs-tag,
+.vscode-light .hljs-name,
+.vscode-light .hljs-attribute {
+	color: #000080;
+	font-weight: normal
+}
+
+.vscode-light .hljs-variable,
+.vscode-light .hljs-template-variable {
+	color: #008080
+}
+
+.vscode-light .hljs-regexp,
+.vscode-light .hljs-link {
+	color: #b68
+}
+
+.vscode-light .hljs-symbol,
+.vscode-light .hljs-bullet {
+	color: #990073
+}
+
+.vscode-light .hljs-built_in,
+.vscode-light .hljs-builtin-name {
+	color: #0086b3
+}
+
+.vscode-light .hljs-meta {
+	color: #999;
+	font-weight: bold
+}
+
+.vscode-light .hljs-deletion {
+	background: #fdd
+}
+
+.vscode-light .hljs-addition {
+	background: #dfd
+}
+
+.vscode-light .hljs-emphasis {
+	font-style: italic
+}
+
+.vscode-light .hljs-strong {
+	font-weight: bold
+}
+
+.vscode-dark .hljs-comment,
+.vscode-dark .hljs-quote {
+	color: #65737e
+}
+
+/* Code style for dark theme */
+.vscode-dark .hljs-variable,
+.vscode-dark .hljs-template-variable,
+.vscode-dark .hljs-tag,
+.vscode-dark .hljs-name,
+.vscode-dark .hljs-selector-id,
+.vscode-dark .hljs-selector-class,
+.vscode-dark .hljs-regexp,
+.vscode-dark .hljs-deletion {
+	color: #bf616a
+}
+
+.vscode-dark .hljs-number,
+.vscode-dark .hljs-built_in,
+.vscode-dark .hljs-builtin-name,
+.vscode-dark .hljs-literal,
+.vscode-dark .hljs-type,
+.vscode-dark .hljs-params,
+.vscode-dark .hljs-meta,
+.vscode-dark .hljs-link {
+	color: #d08770
+}
+
+.vscode-dark .hljs-attribute {
+	color: #ebcb8b
+}
+
+.vscode-dark .hljs-string,
+.vscode-dark .hljs-symbol,
+.vscode-dark .hljs-bullet,
+.vscode-dark .hljs-addition {
+	color: #a3be8c
+}
+
+.vscode-dark .hljs-title,
+.vscode-dark .hljs-section {
+	color: #8fa1b3
+}
+
+.vscode-dark .hljs-keyword,
+.vscode-dark .hljs-selector-tag {
+	color: #b48ead
+}
+
+.vscode-dark .hljs {
+	display: block;
+	overflow-x: auto;
+	background: #2b303b;
+	color: #c0c5ce;
+	padding: 0.5em
+}
+
+.vscode-dark .hljs-emphasis {
+	font-style: italic
+}
+
+.vscode-dark .hljs-strong {
+	font-weight: bold
 }

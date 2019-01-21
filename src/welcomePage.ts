@@ -4,8 +4,13 @@
 "use strict";
 import * as fs from "fs";
 import * as path from "path";
+import * as semver from "semver";
 import * as vscode from "vscode";
 import { Constants } from "./constants";
+import { TelemetryClient } from "./telemetryClient";
+
+const packageJSON = vscode.extensions.getExtension(Constants.ExtensionId).packageJSON;
+const extensionVersion: string = packageJSON.version;
 
 export class WelcomePage {
     private panel: vscode.WebviewPanel;
@@ -14,14 +19,16 @@ export class WelcomePage {
     }
 
     public checkAndShow() {
-        if (!this.context.globalState.get(Constants.IsAzureIoTToolsWelcomePageShown)) {
+        if (this.needToShow()) {
             this.show();
-            this.context.globalState.update(Constants.IsAzureIoTToolsWelcomePageShown, true);
+            TelemetryClient.sendEvent(Constants.AzureIoTToolsShowWelcomePagetEvent, { trigger: "auto" });
+            this.context.globalState.update(Constants.IsAzureIoTToolsWelcomePageShown, extensionVersion);
         }
     }
 
     public show() {
         if (!this.panel) {
+            const startTime = new Date();
             this.panel = vscode.window.createWebviewPanel(
                 "welcomePage",
                 "Welcome to Azure IoT Tools",
@@ -37,9 +44,27 @@ export class WelcomePage {
             this.panel.webview.html = html;
             this.panel.onDidDispose(() => {
                 this.panel = undefined;
+                const duration = (new Date().getTime() - startTime.getTime()) / 1000;
+                TelemetryClient.sendEvent(Constants.AzureIoTToolsCloseWelcomePageEvent, { duration: duration.toString() });
+            });
+            this.panel.webview.onDidReceiveMessage((message) => {
+                if (message.href) {
+                    TelemetryClient.sendEvent(Constants.AzureIoTToolsLinkClickEvent, { href: message.href });
+                } else if (message.tab) {
+                    TelemetryClient.sendEvent(Constants.AzureIoTToolsTabClickEvent, { tab: message.tab });
+                }
             });
         } else {
             this.panel.reveal(vscode.ViewColumn.One);
+        }
+    }
+
+    private needToShow() {
+        const version = this.context.globalState.get(Constants.IsAzureIoTToolsWelcomePageShown);
+        if (semver.valid(version) && semver.gt(extensionVersion, version)) {
+            return true;
+        } else {
+            return false;
         }
     }
 }

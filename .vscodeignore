@@ -2,6 +2,7 @@
 typings/**
 src/**
 images/**
+resources/welcome/*-images/**
 **/*.map
 .gitignore
 tsconfig.json

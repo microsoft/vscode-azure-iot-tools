@@ -1,9 +1,10 @@
+let vscode;
 $(function () {
     main();
 });
 
 function main() {
-    const vscode = acquireVsCodeApi();
+    vscode = acquireVsCodeApi();
     $("a").click((event) => {
         vscode.postMessage({
             href: event.target.href
@@ -30,4 +31,21 @@ function main() {
             $('#back-to-top').fadeOut(duration);
         }
     });
+}
+
+let tabs = ["#simulation-tab", "#edge-tab", "#device-tab"];
+function openTab(tab) {
+    for(let i=0;i<tabs.length;i++)
+    {
+        $(tabs[i]).removeClass("selected");
+        $(tabs[i].replace("tab","tutorial")).css("display", "none");
+    }
+
+    $(tab).addClass("selected");
+
+    vscode.postMessage({
+        tab: tab.replace("#","")
+    });
+
+    $(tab.replace("tab","tutorial")).css("display", "block");
 }
