@@ -12,7 +12,7 @@ export function activate(context: vscode.ExtensionContext) {
     const welcomePage: WelcomePage = new WelcomePage(context);
     welcomePage.checkAndShow();
     const disposable = vscode.commands.registerCommand("azure-iot-tools.showWelcomePage", () => {
-        TelemetryClient.sendEvent(Constants.AzureIoTToolsShowWelcomePagetEvent, { trigger: "manual" });
+        TelemetryClient.sendEvent(Constants.ShowWelcomePageEvent, { trigger: "manual" });
         welcomePage.show();
     });
     context.subscriptions.push(disposable);

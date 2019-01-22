@@ -4,11 +4,11 @@
 "use strict";
 
 export class Constants {
-    public static AzureIoTToolsWelcomePageLatestVersion = "AzureIoTToolsWelcomePageLatestVersion";
-    public static AzureIoTToolsWelcomePageNeverShow = "AzureIoTToolsWelcomePageNeverShow";
-    public static AzureIoTToolsShowWelcomePagetEvent = "General.WelcomePage.Show";
-    public static AzureIoTToolsCloseWelcomePageEvent = "General.WelcomePage.Close";
-    public static AzureIoTToolsLinkClickEvent = "General.WelcomePage.LinkClick";
-    public static AzureIoTToolsTabClickEvent = "General.WelcomePage.TabClick";
+    public static WelcomePageLatestVersion = "WelcomePageLatestVersion";
+    public static WelcomePageNeverShow = "WelcomePageNeverShow";
+    public static ShowWelcomePageEvent = "General.WelcomePage.Show";
+    public static CloseWelcomePageEvent = "General.WelcomePage.Close";
+    public static LinkClickEvent = "General.WelcomePage.LinkClick";
+    public static TabClickEvent = "General.WelcomePage.TabClick";
     public static ExtensionId = "vsciot-vscode.azure-iot-tools";
 }

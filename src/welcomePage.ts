@@ -9,9 +9,6 @@ import * as vscode from "vscode";
 import { Constants } from "./constants";
 import { TelemetryClient } from "./telemetryClient";
 
-const packageJSON = vscode.extensions.getExtension(Constants.ExtensionId).packageJSON;
-const extensionVersion: string = packageJSON.version;
-
 export class WelcomePage {
     private panel: vscode.WebviewPanel;
 
@@ -21,7 +18,7 @@ export class WelcomePage {
     public checkAndShow() {
         if (this.needToShow()) {
             this.show();
-            TelemetryClient.sendEvent(Constants.AzureIoTToolsShowWelcomePagetEvent, { trigger: "auto" });
+            TelemetryClient.sendEvent(Constants.ShowWelcomePageEvent, { trigger: "auto" });
         }
     }
 
@@ -41,22 +38,22 @@ export class WelcomePage {
             let html = fs.readFileSync(this.context.asAbsolutePath(path.join("resources", "welcome", "index.html")), "utf8");
             html = html.replace(/{{root}}/g, vscode.Uri.file(this.context.asAbsolutePath(".")).with({ scheme: "vscode-resource" }).toString());
 
-            const neverShow = this.context.globalState.get(Constants.AzureIoTToolsWelcomePageNeverShow);
+            const neverShow = this.context.globalState.get(Constants.WelcomePageNeverShow);
             html = html.replace("{{Checked}}", neverShow ? "checked" : "");
 
             this.panel.webview.html = html;
             this.panel.onDidDispose(() => {
                 this.panel = undefined;
                 const duration = (new Date().getTime() - startTime.getTime()) / 1000;
-                TelemetryClient.sendEvent(Constants.AzureIoTToolsCloseWelcomePageEvent, { duration: duration.toString() });
+                TelemetryClient.sendEvent(Constants.CloseWelcomePageEvent, { duration: duration.toString() });
             });
             this.panel.webview.onDidReceiveMessage((message) => {
                 if (message.href) {
-                    TelemetryClient.sendEvent(Constants.AzureIoTToolsLinkClickEvent, { href: message.href });
+                    TelemetryClient.sendEvent(Constants.LinkClickEvent, { href: message.href });
                 } else if (message.tab) {
-                    TelemetryClient.sendEvent(Constants.AzureIoTToolsTabClickEvent, { tab: message.tab });
+                    TelemetryClient.sendEvent(Constants.TabClickEvent, { tab: message.tab });
                 } else if (message.neverShow !== undefined) {
-                    this.context.globalState.update(Constants.AzureIoTToolsWelcomePageNeverShow, message.neverShow);
+                    this.context.globalState.update(Constants.WelcomePageNeverShow, message.neverShow);
                 }
             });
         } else {
@@ -65,11 +62,13 @@ export class WelcomePage {
     }
 
     private needToShow() {
-        const neverShow = this.context.globalState.get(Constants.AzureIoTToolsWelcomePageNeverShow);
+        const packageJSON = vscode.extensions.getExtension(Constants.ExtensionId).packageJSON;
+        const extensionVersion: string = packageJSON.version;
+        const neverShow = this.context.globalState.get(Constants.WelcomePageNeverShow);
         if (!neverShow) {
-            const version = this.context.globalState.get(Constants.AzureIoTToolsWelcomePageLatestVersion).toString();
-            this.context.globalState.update(Constants.AzureIoTToolsWelcomePageLatestVersion, extensionVersion);
-            if (semver.valid(version) && semver.gt(extensionVersion, version)) {
+            const version = this.context.globalState.get(Constants.WelcomePageLatestVersion);
+            this.context.globalState.update(Constants.WelcomePageLatestVersion, extensionVersion);
+            if (version && semver.valid(version.toString()) && semver.gt(extensionVersion, version.toString())) {
                 return true;
             } else {
                 return false;
