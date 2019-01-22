@@ -22,9 +22,9 @@ function main() {
         }
     });
 
-    $("#never-show").change(function () {
+    $("#show-welcome-page").change(function () {
         vscode.postMessage({
-            neverShow: $(this).is(":checked")
+            show: $(this).is(":checked")
         });
     });
 

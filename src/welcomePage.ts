@@ -38,8 +38,8 @@ export class WelcomePage {
             let html = fs.readFileSync(this.context.asAbsolutePath(path.join("resources", "welcome", "index.html")), "utf8");
             html = html.replace(/{{root}}/g, vscode.Uri.file(this.context.asAbsolutePath(".")).with({ scheme: "vscode-resource" }).toString());
 
-            const neverShow = this.context.globalState.get(Constants.WelcomePageNeverShow);
-            html = html.replace("{{Checked}}", neverShow ? "checked" : "");
+            const show = this.context.globalState.get(Constants.ShowWelcomePageAfterUpdating);
+            html = html.replace("{{Checked}}", show === false ? "" : "checked");
 
             this.panel.webview.html = html;
             this.panel.onDidDispose(() => {
@@ -52,8 +52,8 @@ export class WelcomePage {
                     TelemetryClient.sendEvent(Constants.LinkClickEvent, { href: message.href });
                 } else if (message.tab) {
                     TelemetryClient.sendEvent(Constants.TabClickEvent, { tab: message.tab });
-                } else if (message.neverShow !== undefined) {
-                    this.context.globalState.update(Constants.WelcomePageNeverShow, message.neverShow);
+                } else if (message.show !== undefined) {
+                    this.context.globalState.update(Constants.ShowWelcomePageAfterUpdating, message.show);
                 }
             });
         } else {
@@ -62,13 +62,11 @@ export class WelcomePage {
     }
 
     private needToShow() {
-        const packageJSON = vscode.extensions.getExtension(Constants.ExtensionId).packageJSON;
-        const extensionVersion: string = packageJSON.version;
-        const neverShow = this.context.globalState.get(Constants.WelcomePageNeverShow);
-        if (!neverShow) {
+        const show = this.context.globalState.get(Constants.ShowWelcomePageAfterUpdating);
+        if (show) {
             const version = this.context.globalState.get(Constants.WelcomePageLatestVersion);
-            this.context.globalState.update(Constants.WelcomePageLatestVersion, extensionVersion);
-            if (version && semver.valid(version.toString()) && semver.gt(extensionVersion, version.toString())) {
+            this.context.globalState.update(Constants.WelcomePageLatestVersion, Constants.extensionVersion);
+            if (version && semver.valid(version.toString()) && semver.gt(Constants.extensionVersion, version.toString())) {
                 return true;
             } else {
                 return false;

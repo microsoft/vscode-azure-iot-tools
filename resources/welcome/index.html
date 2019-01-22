@@ -19,41 +19,16 @@
             <div>
                 <div id="whats-new">
                     <h2>What's new</h2>
-                    <h3>Azure IoT Hub Toolkit 2.1.0</h3>
-                    <h4 class="list-heading">Added</h4>
                     <ul>
-                        <li>Reorder and group context menu</li>
-                        <li>Add confirmation prompt when deleting resource</li>
-                        <li>Add 'Stop' button for monitoring D2C message in Status Bar</li>
-                        <li>Add Direct Method template for Node.js code generation</li>
-                    </ul>
-                    <h4 class="list-heading">Changed</h4>
-                    <ul>
-                        <li>Use Webpack to improve extension performance</li>
-                        <li>Remove 'Refresh' item from context menu</li>
-                    </ul>
-                    <h3>Azure IoT Edge 1.8.0</h3>
-                    <h4 class="list-heading">Added</h4>
-                    <ul>
-                        <li>Autodetect/install/update iotedgehubdev</li>
-                        <li>Install Azure IoT Edge Node.js Module Generator automatically before new Node.js module</li>
-                    </ul>
-                    <h4 class="list-heading">Changed</h4>
-                    <ul>
-                        <li>Use Webpack to improve extension performance</li>
-                        <li>Use git download instead of cookiecutter to add Python module</li>
-                    </ul>
-                    <h3>Azure IoT Device Workbench 0.2.2</h3>
-                    <h4 class="list-heading">Added</h4>
-                    <ul>
-                        <li>IoT DevKit: Add community contributed examples into gallery</li>
-                        <li>Remove 'Azure Functions Extension' from hard dependency list</li>
-                        <li>IoT DevKit: Update the layout of the example gallery page</li>
-                    </ul>
-                    <h4 class="list-heading">Changed</h4>
-                    <ul>
-                        <li>Remove 'Azure Functions Extension' from hard dependency list</li>
-                        <li>IoT DevKit: Update the layout of the example gallery page</li>
+                        <li>
+                            <a href="https://github.com/Microsoft/vscode-azure-iot-toolkit/blob/master/CHANGELOG.md">Azure IoT Hub Toolkit Update</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Microsoft/vscode-azure-iot-edge/blob/master/CHANGELOG.md">Azure IoT Edge Update</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Microsoft/vscode-iot-workbench/blob/master/CHANGELOG.md">Azure IoT Device Workbench Update</a>
+                        </li>
                     </ul>
                 </div>
                 <div id="quickstarts">
@@ -364,7 +339,7 @@
                     <p>You can watch these <a href="https://channel9.msdn.com/">Channel 9</a> videos to have overview about what they do:</p>
                     <ul>
                         <li><a href="https://channel9.msdn.com/Shows/Internet-of-Things-Show/IoT-Workbench-extension-for-VS-Code">Introduction to the new IoT Workbench extension for VS Code</a></li>
-                        <li><a href="https://channel9.msdn.com/Shows/Internet-of-Things-Show/Whats-new-in-the-IoT-Toolkit-extension-for-VS-Code">What's new in the IoT Toolkit extension for VS Code</a></li>
+                        <li><a href="https://channel9.msdn.com/Shows/Internet-of-Things-Show/Whats-new-in-the-IoT-Toolkit-extension-for-VS-Code">What's new in the IoT Hub Toolkit extension for VS Code</a></li>
                     </ul>
                     <p>Follow these steps to prepare the development environment for DevKit:</p>
                     <ol>
@@ -503,7 +478,7 @@ sudo usermod -a -G plugdev $(whoami)
                     </ul>
                     <p><img src="https://raw.githubusercontent.com/Microsoft/vscode-azure-iot-tools/master/resources/welcome/device-workbench-images/result-serial-output.png" alt="Serial monitor output" /></p>
                     <h4 id="viewthetelemetryreceivedbyazureiothub">View the telemetry received by Azure IoT Hub</h4>
-                    <p>You can use <a href="https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit">Azure IoT Hub Toolkit</a> (formerly Azure IoT Toolkit) to monitor device-to-cloud (D2C) messages in IoT Hub.</p>
+                    <p>You can use <a href="https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit">Azure IoT Hub Toolkit</a> (formerly Azure IoT Hub Toolkit) to monitor device-to-cloud (D2C) messages in IoT Hub.</p>
                     <ol>
                         <li>
                             <p>In Visual Studio Code, look for <strong>Azure IoT Hub Toolkit</strong> in the extension marketplace and install it if you have not done that.</p>
@@ -531,7 +506,7 @@ sudo usermod -a -G plugdev $(whoami)
                     <h3 id="learnmore">Learn more</h3>
                     <p>To learn more about using Azure IoT Device Workbench, visit the Github repo: <a href="https://github.com/Microsoft/vscode-iot-workbench">https://github.com/Microsoft/vscode-iot-workbench</a>.</p>
                 </div>
-                <input type="checkbox" id="never-show" {{Checked}}>Never show welcome page again<br>
+                <input type="checkbox" class="show-welcome-page" id="show-welcome-page" {{Checked}}>Show welcome page after upgrading to new version<br>
             </div>
         </div>
         <div id="sidebar">
@@ -541,17 +516,41 @@ sudo usermod -a -G plugdev $(whoami)
                     <a href="https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools">Marketplace</a>
                 </div>
                 <div>
-                    <a href="https://github.com/Microsoft/vscode-azure-iot-tools">Repository</a>
-                </div>
-                <div>
                     <a href="https://github.com/Microsoft/vscode-azure-iot-tools/issues">Issues</a>
                 </div>
                 <div>
                     <a href="https://github.com/Microsoft/vscode-azure-iot-tools/blob/master/CHANGELOG.md">Changelog</a>
                 </div>
             </div>
+            <div>
+                <h3>Repositories</h3>
+                <div>
+                    <a href="https://github.com/Microsoft/vscode-azure-iot-tools">Azure IoT Tools</a>
+                </div>
+                <div>
+                    <a href="https://github.com/Microsoft/vscode-azure-iot-toolkit">Azure IoT Hub Toolkit</a>
+                </div>
+                <div>
+                    <a href="https://github.com/Microsoft/vscode-azure-iot-edge">Azure IoT Edge</a>
+                </div>
+                <div>
+                    <a href="https://github.com/Microsoft/vscode-iot-workbench">Azure IoT Device Workbench</a>
+                </div>
+            </div>
             <div id="resources">
                 <h3>Resources</h3>
+                <div>
+                    <a href="https://github.com/Microsoft/vscode-azure-iot-toolkit/wiki">Azure IoT Hub Toolkit Documentation</a>
+                </div>
+                <div>
+                    <a href="https://github.com/Microsoft/vscode-azure-iot-edge/blob/master/README.md">Azure IoT Edge Documentation</a>
+                </div>
+                <div>
+                    <a href="https://github.com/Microsoft/vscode-iot-workbench/blob/master/README.md">Azure IoT Device Workbench Documentation</a>
+                </div>    
+                <div>
+                    <a href="https://aka.ms/iot-devkit">IoT Devkit Home Page</a>
+                </div>
                 <div>
                     <a href="https://channel9.msdn.com/Shows/Internet-of-Things-Show/Azure-IoT-Toolkit-extension-for-Visual-Studio-Code">Channel 9 video: Walkthrough of Azure IoT Hub Toolkit extension</a>
                 </div>
@@ -562,31 +561,10 @@ sudo usermod -a -G plugdev $(whoami)
                     <a href="https://channel9.msdn.com/Shows/Internet-of-Things-Show/IoT-Workbench-extension-for-VS-Code">Channel 9 video: Walkthrough of Azure IoT Device Workbench extension</a>
                 </div>
                 <div>
-                    <a href="https://channel9.msdn.com/Shows/Internet-of-Things-Show/Whats-new-in-the-IoT-Toolkit-extension-for-VS-Code">Channel 9 video: What's new in the IoT Toolkit extension for VS Code</a>
+                    <a href="https://channel9.msdn.com/Shows/Internet-of-Things-Show/Whats-new-in-the-IoT-Toolkit-extension-for-VS-Code">Channel 9 video: What's new in the IoT Hub Toolkit extension for VS Code</a>
                 </div>
                 <div>
                     <a href="https://channel9.msdn.com/Shows/Internet-of-Things-Show/Enhanced-IoT-Edge-developer-experience-in-VS-Code">Channel 9 video: Enhanced IoT Edge developer experience in VS Code</a>
-                </div>
-                <div>
-                    <a href="https://github.com/Microsoft/vscode-azure-iot-toolkit/wiki">Azure IoT Toolkit Documentation</a>
-                </div>
-                <div>
-                    <a href="https://github.com/Microsoft/vscode-azure-iot-edge/blob/master/README.md">Azure IoT Edge Wiki Documentation</a>
-                </div>
-                <div>
-                    <a href="https://github.com/Microsoft/vscode-iot-workbench/blob/master/README.md">Azure IoT Device Workbench Documentation</a>
-                </div>    
-                <div>
-                    <a href="https://aka.ms/iot-devkit">IoT Devkit Home Page</a>
-                </div>
-                <div>
-                    <a href="https://github.com/Microsoft/vscode-azure-iot-toolkit">Github Repository for Azure IoT Toolkit</a>
-                </div>
-                <div>
-                    <a href="https://github.com/Microsoft/vscode-azure-iot-edge">Github Repository for Azure IoT Edge</a>
-                </div>
-                <div>
-                    <a href="https://github.com/Microsoft/vscode-iot-workbench">Github Repository for Azure IoT Device Workbench</a>
                 </div>
             </div>
         </div>

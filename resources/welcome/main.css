@@ -371,6 +371,10 @@ blockquote {
     margin-right: 0;
 }
 
+.show-welcome-page {
+    margin-bottom: 40px
+}
+
 .vscode-light .hljs {
 	display: block;
 	overflow-x: auto;
