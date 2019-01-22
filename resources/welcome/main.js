@@ -22,13 +22,19 @@ function main() {
         }
     });
 
+    $("#never-show").change(function () {
+        vscode.postMessage({
+            neverShow: $(this).is(":checked")
+        });
+    });
+
     $(window).scroll(() => {
         let offset = 250;
         let duration = 600;
         if ($(this).scrollTop() >= offset) {
-            $('#back-to-top').fadeIn(duration);
+            $("#back-to-top").fadeIn(duration);
         } else {
-            $('#back-to-top').fadeOut(duration);
+            $("#back-to-top").fadeOut(duration);
         }
     });
 }

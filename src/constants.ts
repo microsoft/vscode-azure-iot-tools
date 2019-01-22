@@ -4,7 +4,8 @@
 "use strict";
 
 export class Constants {
-    public static IsAzureIoTToolsWelcomePageShown = "IsAzureIoTToolsWelcomePageShown";
+    public static AzureIoTToolsWelcomePageLatestVersion = "AzureIoTToolsWelcomePageLatestVersion";
+    public static AzureIoTToolsWelcomePageNeverShow = "AzureIoTToolsWelcomePageNeverShow";
     public static AzureIoTToolsShowWelcomePagetEvent = "General.WelcomePage.Show";
     public static AzureIoTToolsCloseWelcomePageEvent = "General.WelcomePage.Close";
     public static AzureIoTToolsLinkClickEvent = "General.WelcomePage.LinkClick";

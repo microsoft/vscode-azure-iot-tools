@@ -22,7 +22,6 @@ export class WelcomePage {
         if (this.needToShow()) {
             this.show();
             TelemetryClient.sendEvent(Constants.AzureIoTToolsShowWelcomePagetEvent, { trigger: "auto" });
-            this.context.globalState.update(Constants.IsAzureIoTToolsWelcomePageShown, extensionVersion);
         }
     }
 
@@ -41,6 +40,10 @@ export class WelcomePage {
             );
             let html = fs.readFileSync(this.context.asAbsolutePath(path.join("resources", "welcome", "index.html")), "utf8");
             html = html.replace(/{{root}}/g, vscode.Uri.file(this.context.asAbsolutePath(".")).with({ scheme: "vscode-resource" }).toString());
+
+            const neverShow = this.context.globalState.get(Constants.AzureIoTToolsWelcomePageNeverShow);
+            html = html.replace("{{Checked}}", neverShow ? "checked" : "");
+
             this.panel.webview.html = html;
             this.panel.onDidDispose(() => {
                 this.panel = undefined;
@@ -52,6 +55,8 @@ export class WelcomePage {
                     TelemetryClient.sendEvent(Constants.AzureIoTToolsLinkClickEvent, { href: message.href });
                 } else if (message.tab) {
                     TelemetryClient.sendEvent(Constants.AzureIoTToolsTabClickEvent, { tab: message.tab });
+                } else if (message.neverShow !== undefined) {
+                    this.context.globalState.update(Constants.AzureIoTToolsWelcomePageNeverShow, message.neverShow);
                 }
             });
         } else {
@@ -60,9 +65,15 @@ export class WelcomePage {
     }
 
     private needToShow() {
-        const version = this.context.globalState.get(Constants.IsAzureIoTToolsWelcomePageShown);
-        if (semver.valid(version) && semver.gt(extensionVersion, version)) {
-            return true;
+        const neverShow = this.context.globalState.get(Constants.AzureIoTToolsWelcomePageNeverShow);
+        if (!neverShow) {
+            const version = this.context.globalState.get(Constants.AzureIoTToolsWelcomePageLatestVersion).toString();
+            this.context.globalState.update(Constants.AzureIoTToolsWelcomePageLatestVersion, extensionVersion);
+            if (semver.valid(version) && semver.gt(extensionVersion, version)) {
+                return true;
+            } else {
+                return false;
+            }
         } else {
             return false;
         }
