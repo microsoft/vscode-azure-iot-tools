@@ -21,13 +21,13 @@
                     <h2>What's new</h2>
                     <ul>
                         <li>
-                            <a href="https://github.com/Microsoft/vscode-azure-iot-toolkit/blob/master/CHANGELOG.md">Azure IoT Hub Toolkit Update</a>
+                            <a href="https://github.com/Microsoft/vscode-azure-iot-toolkit/blob/master/CHANGELOG.md">Azure IoT Hub Toolkit</a>
                         </li>
                         <li>
-                            <a href="https://github.com/Microsoft/vscode-azure-iot-edge/blob/master/CHANGELOG.md">Azure IoT Edge Update</a>
+                            <a href="https://github.com/Microsoft/vscode-azure-iot-edge/blob/master/CHANGELOG.md">Azure IoT Edge</a>
                         </li>
                         <li>
-                            <a href="https://github.com/Microsoft/vscode-iot-workbench/blob/master/CHANGELOG.md">Azure IoT Device Workbench Update</a>
+                            <a href="https://github.com/Microsoft/vscode-iot-workbench/blob/master/CHANGELOG.md">Azure IoT Device Workbench</a>
                         </li>
                     </ul>
                 </div>
@@ -101,9 +101,9 @@
                 <div>
                     <nav class="pivotTabs">
                         <ul>
-                            <li id="simulation-tab" class="selected" onclick="openTab('#simulation-tab')"><a href="javascript:void(0)">IoT Hub</li>
-                            <li id="edge-tab" onclick="openTab('#edge-tab')"><a href="javascript:void(0)">IoT Edge</a></li>
-                            <li id="device-tab" onclick="openTab('#device-tab')"><a href="javascript:void(0)">IoT Device</a></li>
+                            <li id="simulation-tab" class="selected" onclick="openTab('#simulation-tab')"><a href="javascript:void(0)" class="tab-link">IoT Hub</li>
+                            <li id="edge-tab" onclick="openTab('#edge-tab')"><a href="javascript:void(0)" class="tab-link">IoT Edge</a></li>
+                            <li id="device-tab" onclick="openTab('#device-tab')"><a href="javascript:void(0)" class="tab-link">IoT Device</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -187,7 +187,7 @@
                             Install <a href="https://www.python.org/">Python (2.7/3.5+) and Pip</a>
                         </li>
                         <li>
-                            Install iotedgehubdev by running below command in your terminal 
+                            Install iotedgehubdev by running below command in your terminal
                             <pre><code class="json">pip install --upgrade iotedgehubdev</code></pre>
                             <div><strong>Note</strong>: Please install iotedgehubdev to root on Linux/macOS (Don't use '--user' option in the 'pip install' command). </div>
                         </li>
@@ -314,8 +314,8 @@
                     <blockquote>
                         <p>The IP address displayed in the photo might not match the actual IP address assigned and displayed on the DevKit screen. This is normal, because Wi-Fi uses DHCP to dynamically assign IPs.</p>
                     </blockquote>
-                    <p>After Wi-Fi is configured, your credentials will persist on the device for that connection, even if the device is unplugged. For example, 
-                        if you configure the DevKit for Wi-Fi in your home and then take the DevKit to the office, you will need to reconfigure AP mode (starting 
+                    <p>After Wi-Fi is configured, your credentials will persist on the device for that connection, even if the device is unplugged. For example,
+                        if you configure the DevKit for Wi-Fi in your home and then take the DevKit to the office, you will need to reconfigure AP mode (starting
                         at the step in the "Enter AP Mode" section) to connect the DevKit to your office Wi-Fi. </p>
                     <h3 id="startusingthedevkit">Start using the DevKit</h3>
                     <p>The default app running on the DevKit checks the latest version of the firmware and displays some sensor diagnosis data for you.</p>
@@ -547,7 +547,7 @@ sudo usermod -a -G plugdev $(whoami)
                 </div>
                 <div>
                     <a href="https://github.com/Microsoft/vscode-iot-workbench/blob/master/README.md">Azure IoT Device Workbench Documentation</a>
-                </div>    
+                </div>
                 <div>
                     <a href="https://aka.ms/iot-devkit">IoT Devkit Home Page</a>
                 </div>
@@ -556,7 +556,7 @@ sudo usermod -a -G plugdev $(whoami)
                 </div>
                 <div>
                     <a href="https://channel9.msdn.com/Shows/Internet-of-Things-Show/Azure-IoT-Edge-extension-for-Visual-Studio-Code">Channel 9 video: Walkthrough of Azure IoT Edge extension</a>
-                </div>     
+                </div>
                 <div>
                     <a href="https://channel9.msdn.com/Shows/Internet-of-Things-Show/IoT-Workbench-extension-for-VS-Code">Channel 9 video: Walkthrough of Azure IoT Device Workbench extension</a>
                 </div>
