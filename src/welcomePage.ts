@@ -62,7 +62,11 @@ export class WelcomePage {
     }
 
     private needToShow() {
-        const show = this.context.globalState.get(Constants.ShowWelcomePageAfterUpdating);
+        let show = this.context.globalState.get(Constants.ShowWelcomePageAfterUpdating);
+        if (show === undefined) {
+            this.context.globalState.update(Constants.ShowWelcomePageAfterUpdating, true);
+            show = true;
+        }
         if (show) {
             const version = this.context.globalState.get(Constants.WelcomePageLatestVersion);
             this.context.globalState.update(Constants.WelcomePageLatestVersion, Constants.extensionVersion);
