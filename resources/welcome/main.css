@@ -214,14 +214,17 @@ header p {
 
 #simulation-tutorial{
     display: block;
+    max-width: 800px;
 }
 
 #edge-tutorial{
     display: none;
+    max-width: 800px;
 }
 
 #device-tutorial{
     display: none;
+    max-width: 800px;
 }
 
 #simulation-tutorial h3, #edge-tutorial h3, #device-tutorial h3{
