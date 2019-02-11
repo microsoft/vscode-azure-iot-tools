@@ -1,9 +1,10 @@
+let vscode;
 $(function () {
     main();
 });
 
 function main() {
-    const vscode = acquireVsCodeApi();
+    vscode = acquireVsCodeApi();
     $("a").click((event) => {
         vscode.postMessage({
             href: event.target.href
@@ -21,13 +22,36 @@ function main() {
         }
     });
 
+    $("#show-welcome-page").change(function () {
+        vscode.postMessage({
+            show: $(this).is(":checked")
+        });
+    });
+
     $(window).scroll(() => {
         let offset = 250;
         let duration = 600;
         if ($(this).scrollTop() >= offset) {
-            $('#back-to-top').fadeIn(duration);
+            $("#back-to-top").fadeIn(duration);
         } else {
-            $('#back-to-top').fadeOut(duration);
+            $("#back-to-top").fadeOut(duration);
         }
     });
+}
+
+let tabs = ["#simulation-tab", "#edge-tab", "#device-tab"];
+function openTab(tab) {
+    for(let i=0;i<tabs.length;i++)
+    {
+        $(tabs[i]).removeClass("selected");
+        $(tabs[i].replace("tab","tutorial")).css("display", "none");
+    }
+
+    $(tab).addClass("selected");
+
+    vscode.postMessage({
+        tab: tab.replace("#","")
+    });
+
+    $(tab.replace("tab","tutorial")).css("display", "block");
 }

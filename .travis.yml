@@ -11,6 +11,7 @@ before_install:
 install:
 - npm install
 - npm run tslint
+- node scripts/genAiKey.js
 - npm install -g vsce
 script:
 - vsce package
