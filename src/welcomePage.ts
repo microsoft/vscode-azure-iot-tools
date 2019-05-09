@@ -70,7 +70,7 @@ export class WelcomePage {
         if (show) {
             const version = this.context.globalState.get(Constants.WelcomePageLatestVersion);
             this.context.globalState.update(Constants.WelcomePageLatestVersion, Constants.extensionVersion);
-            if (version && semver.valid(version.toString()) && semver.gt(Constants.extensionVersion, version.toString())) {
+            if (!version || (semver.valid(version.toString()) && semver.gt(Constants.extensionVersion, version.toString()))) {
                 return true;
             } else {
                 return false;
