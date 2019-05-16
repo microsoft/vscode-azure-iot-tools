@@ -1,5 +1,5 @@
 
-## 0.0.3
+## 0.1.0
 * Show welcome page in first install
 
 ## 0.0.2
