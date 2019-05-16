@@ -44,7 +44,7 @@
                             <p>To select IoT Hub, click above button, or follow below steps.</p>
                             <ol>
                                 <li>
-                                    <div>In Explorer of VS Code, click "Azure IoT Hub Devices" tab in the bottom left corner.</div>
+                                    <div>In Explorer of VS Code, click "Azure IoT Hub" tab in the bottom left corner.</div>
                                     <img src="https://raw.githubusercontent.com/Microsoft/vscode-azure-iot-tools/master/resources/welcome/toolkit-images/device-explorer-click.png">
                                 </li>
                                 <li>
@@ -59,7 +59,7 @@
                                     <div>After you sign in, your Azure Subscription list will be shown, then select Azure Subscription and IoT Hub.</div>
                                 </li>
                                 <li>
-                                    <div>The device list will be shown in "Azure IoT Hub Devices" tab in a few seconds.</div>
+                                    <div>The device list will be shown in "Azure IoT Hub" tab in a few seconds.</div>
                                     <img src="https://raw.githubusercontent.com/Microsoft/vscode-azure-iot-tools/master/resources/welcome/toolkit-images/device-explorer.png">
                                 </li>
                             </ol>
@@ -76,7 +76,7 @@
                             <p>To create IoT Hub, click above button, or follow below steps.</p>
                             <ol>
                                 <li>
-                                    <div>In Explorer of VS Code, click "Azure IoT Hub Devices" tab in the bottom left corner.</div>
+                                    <div>In Explorer of VS Code, click "Azure IoT Hub" tab in the bottom left corner.</div>
                                     <img src="https://raw.githubusercontent.com/Microsoft/vscode-azure-iot-tools/master/resources/welcome/toolkit-images/device-explorer-click.png">
                                 </li>
                                 <li>
@@ -126,7 +126,7 @@
                     <h3 id="register-device">Register a device</h3>
                     <p>A device must be registered with your IoT hub before it can connect.</p>
                     <ol>
-                        <li>Click <strong>... &gt; Create Device</strong> at <strong>AZURE IOT HUB DEVICES</strong> tab, or type <strong>Azure IoT Hub: Create Device</strong> in Command Palette.</li>
+                        <li>Click <strong>... &gt; Create Device</strong> at <strong>AZURE IOT HUB</strong> tab, or type <strong>Azure IoT Hub: Create Device</strong> in Command Palette.</li>
                         <li>Enter device ID and press <strong>Enter</strong>.</li>
                         <li>Wait a few seconds until the new device is created.</li>
                     </ol>
@@ -142,18 +142,18 @@
                     <h3 id="monitor-d2c">Monitor device-to-cloud (D2C) message</h3>
                     <p>While you could send message to your IoT Hub, it is also possible to monitor those message in VS Code.</p>
                     <ol>
-                        <li>Right-click your device and select <strong>Start Monitoring D2C Message</strong>.</li>
+                        <li>Right-click your device and select <strong>Start Monitoring Built-in Event Endpoint</strong>.</li>
                     </ol>
                     <img src="https://raw.githubusercontent.com/Microsoft/vscode-azure-iot-tools/master/resources/welcome/toolkit-images/startmonitor.png" alt="start monitor"
                     />
                     <ol start="2">
                         <li>The monitored messages will be shown in <strong>OUTPUT &gt; Azure IoT Hub Toolkit</strong> view.</li>
-                        <li>To stop monitoring, right-click the <strong>OUTPUT</strong>view and select<strong> Stop Monitoring D2C Message</strong>.</li>
+                        <li>To stop monitoring, right-click the <strong>OUTPUT</strong>view and select<strong> Stop Monitoring Built-in Event Endpoint</strong>.</li>
                     </ol>
                     <img src="https://raw.githubusercontent.com/Microsoft/vscode-azure-iot-tools/master/resources/welcome/toolkit-images/stopmonitor.png" alt="stop monitor"
                     />
                     <h3 id="generate-app">Generate Azure IoT application</h3>
-                    <p>You could also use your favorite programing language (e.g. C#, Go, Java, Node.js, PHP, Python and Ruby) to <a href="https://blogs.msdn.microsoft.com/iotdev/2018/08/08/quickly-build-your-azure-iot-application-in-vs-code-with-node-js-python-or-rest-api/">quickly generate an Azure IoT application</a>.</p>
+                    <p>You could also use your favorite programing language (e.g. C#, Go, Java, Node.js, PHP, Python and Ruby) to <a href="https://devblogs.microsoft.com/iotdev/azure-iot-toolkit-1-2-0-quickly-build-your-azure-iot-application-in-vs-code-with-node-js-python-or-rest-api/">quickly generate an Azure IoT application</a>.</p>
                     <ol>
                         <li>Right-click your device and select
                             <strong>Generate Code</strong>
@@ -197,7 +197,7 @@
                     <p>A IoT Edge device must be registered with your IoT hub before it can connect.</p>
 
                     <ol>
-                        <li>Click ... > <strong>Create IoT Edge Device</strong> at <strong>AZURE IOT HUB DEVICES</strong> tab, or type Azure IoT Hub: Create IoT Edge Device in Command Palette. </li>
+                        <li>Click ... > <strong>Create IoT Edge Device</strong> at <strong>AZURE IOT HUB</strong> tab, or type Azure IoT Hub: Create IoT Edge Device in Command Palette. </li>
                         <li>Enter device ID and press <strong>Enter</strong>. </li>
                         <li>Wait a few seconds until the new device is created. </li>
                         <img src="https://raw.githubusercontent.com/Microsoft/vscode-azure-iot-tools/master/resources/welcome/edge-images/create-edge-device.gif" alt="create edge device" />
@@ -230,9 +230,9 @@
                     <h3>View generated data</h3>
                     <p>You can view the messages as they arrive at your IoT hub</p>
                     <ol>
-                        <li>Right-click your device and select <strong>Start Monitoring D2C Message</strong>. </li>
+                        <li>Right-click your device and select <strong>Start Monitoring Built-in Event Endpoint</strong>. </li>
                         <li>The monitored messages will be shown in <strong>OUTPUT > Azure IoT Hub Toolkit</strong> view. </li>
-                        <li>To stop monitoring, click <strong>Stop Monitoring D2C Message</strong> buton in status bar. </li>
+                        <li>To stop monitoring, click <strong>Stop Monitoring Built-in Event Endpoint</strong> buton in status bar. </li>
                         <img src="https://raw.githubusercontent.com/Microsoft/vscode-azure-iot-tools/master/resources/welcome/edge-images/view-generated-data.png" alt="view generated data" />
                     </ol>
 
@@ -484,15 +484,15 @@ sudo usermod -a -G plugdev $(whoami)
                             <p>In Visual Studio Code, look for <strong>Azure IoT Hub Toolkit</strong> in the extension marketplace and install it if you have not done that.</p>
                         </li>
                         <li>
-                            <p>Expand the <strong>AZURE IOT HUB DEVICES</strong> pane on the left, click <strong>Select IoT Hub</strong>. It will guide you to sign in to Azure if you have not yet done that.</p>
+                            <p>Expand the <strong>AZURE IOT HUB</strong> pane on the left, click <strong>Select IoT Hub</strong>. It will guide you to sign in to Azure if you have not yet done that.</p>
                         </li>
                         <li>
                             <p>After signing in, select an Azure subscription and then Azure IoT Hub to use. The device list for that Azure IoT Hub will display in the pane.
                                 <img src="https://raw.githubusercontent.com/Microsoft/vscode-azure-iot-tools/master/resources/welcome/device-workbench-images/select-iothub.gif" alt="Select IoT Hub" /></p>
                         </li>
                         <li>
-                            <p>In the <strong>AZURE IOT HUB DEVICES</strong> pane right click on the device name you created and select
-                                <strong>Start Monitoring D2C Message</strong>.
+                            <p>In the <strong>AZURE IOT HUB</strong> pane right click on the device name you created and select
+                                <strong>Start Monitoring Built-in Event Endpoint</strong>.
                                 <img src="https://raw.githubusercontent.com/Microsoft/vscode-azure-iot-tools/master/resources/welcome/device-workbench-images/monitor-d2c.png" alt="Monitor D2C Message" /></p>
                         </li>
                         <li>
