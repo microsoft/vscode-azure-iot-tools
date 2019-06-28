@@ -4,6 +4,30 @@
 
 > If you do not have an Azure subscription, [sign up today](https://azure.microsoft.com/en-us/free/?b=16.48) for a free account. You'll get 12 months of popular free services, **$200** in Azure Credits to try out any combination of Azure services, and access to free services such as Azure IoT Hub, Azure IoT Edge, etc.
 
+## What's New (v0.2.0)
+### Azure loT Hub Toolkit
+#### Changed
+* Update json schema version to 2.0 for deployment validation
+
+#### Fixed
+* [#332](https://github.com/microsoft/vscode-azure-iot-toolkit/pull/332): Bump axios from 0.18.0 to 0.18.1
+* [#334](https://github.com/microsoft/vscode-azure-iot-toolkit/pull/334): The menu/icon of new Edge Device is sometimes not right
+
+### Azure loT Edge
+#### Added
+* Support create an Azure IoT Edge Solution without any module.
+
+#### Changed
+* Only add tempSensor module when adding custom module.
+* Fixed the issue command broken on VSCode 1.35.0+ [#459](https://github.com/microsoft/vscode-azure-iot-edge/issues/459).
+
+### Azure loT Device Workbench
+#### Added
+* Provide the option to disable auto popup landing page.
+
+#### Fixed
+* Improve the error handling of loading example.
+
 ## Azure IoT Services
 - Develop and connect your [Azure loT Applications](https://azure.microsoft.com/en-us/overview/iot/) to Azure using the [Azure loT Toolkit](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit). With this extension, you can interact with an Azure loT Hub, manage connected devices, and enable distributed tracing for your Azure loT applications.
 
