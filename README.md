@@ -4,29 +4,30 @@
 
 > If you do not have an Azure subscription, [sign up today](https://azure.microsoft.com/en-us/free/?b=16.48) for a free account. You'll get 12 months of popular free services, **$200** in Azure Credits to try out any combination of Azure services, and access to free services such as Azure IoT Hub, Azure IoT Edge, etc.
 
-## What's New (v0.2.0)
+## What's New (v0.3.0)
 ### Azure loT Hub Toolkit
-#### Changed
-* Update json schema version to 2.0 for deployment validation
+### Added
+* Update infrastructure to support localization (Thanks [@matsujirushi](https://github.com/matsujirushi)!)
+* Localization for Japanese language (Thanks [@matsujirushi](https://github.com/matsujirushi)!)
+* Expose API to read IoT Hub connection string
 
-#### Fixed
-* [#332](https://github.com/microsoft/vscode-azure-iot-toolkit/pull/332): Bump axios from 0.18.0 to 0.18.1
-* [#334](https://github.com/microsoft/vscode-azure-iot-toolkit/pull/334): The menu/icon of new Edge Device is sometimes not right
+### Changed
+* Use OS credential store to store IoT Hub connection string (To be more secure, we will no longer use `azure-iot-toolkit.iotHubConnectionString` in settings.json to store IoT Hub connection string)
 
 ### Azure loT Edge
-#### Added
-* Support create an Azure IoT Edge Solution without any module.
-
-#### Changed
-* Only add tempSensor module when adding custom module.
-* Fixed the issue command broken on VSCode 1.35.0+ [#459](https://github.com/microsoft/vscode-azure-iot-edge/issues/459).
+### Changed
+* ASA error message improvement
+* Rename 'tempSensor' to 'SimulatedTemperatureSensor'
+* Read connection string from API of Azure IoT Hub Toolkit
 
 ### Azure loT Device Workbench
-#### Added
-* Provide the option to disable auto popup landing page.
+### Added
+- We are excited to announce the preview of a new feature enabled in Azure IoT Device Workbench extension in VS Code to simplify the device cross-compiling toolchain acquisition effort for device developers working on embedded Linux devices (e.g. Debian, Ubuntu, Yocto Linux…) with Azure IoT by encapsulating the compilers, [device SDK](https://github.com/Azure/azure-iot-sdk-c) and essential libraries in [Containers](https://www.docker.com/resources/what-container). All you need is to install or upgrade the IoT Device Workbench and [get started](https://github.com/microsoft/vscode-iot-workbench/tree/containerized-toolchain-readme) developing within the container, just like today you are using a local environment.
 
-#### Fixed
-* Improve the error handling of loading example.
+### Fixed
+- Fix the issue of "MXCHIP AZ3166 serial port button not work" [#661](https://github.com/microsoft/vscode-iot-workbench/issues/661) which started after update to VS Code 1.36.0.
+
+Special thanks to [br1pro](https://github.com/br1pro) and [Remco Ploeg](https://github.com/rploeg), thanks for your feedbacks.
 
 ## Azure IoT Services
 - Develop and connect your [Azure loT Applications](https://azure.microsoft.com/en-us/overview/iot/) to Azure using the [Azure loT Toolkit](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit). With this extension, you can interact with an Azure loT Hub, manage connected devices, and enable distributed tracing for your Azure loT applications.

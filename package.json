@@ -1,6 +1,6 @@
 {
     "name": "azure-iot-tools",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "publisher": "vsciot-vscode",
     "displayName": "Azure IoT Tools",
     "description": "The ultimate collection of extensions for working with Azure IoT in VS Code!",

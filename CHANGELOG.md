@@ -1,3 +1,6 @@
+## 0.3.0
+* Move the postion of 'What's New' section of Welcome Page
+
 ## 0.2.0
 * Add 'What's New' section
 
