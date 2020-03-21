@@ -4,7 +4,7 @@
 
 > If you do not have an Azure subscription, [sign up today](https://azure.microsoft.com/en-us/free/?b=16.48) for a free account. You'll get 12 months of popular free services, **$200** in Azure Credits to try out any combination of Azure services, and access to free services such as Azure IoT Hub, Azure IoT Edge, etc.
 
-## What's New (v0.3.0)
+## What's New (v0.3.0)  
 ### Azure loT Hub Toolkit
 ### Added
 * Update infrastructure to support localization (Thanks [@matsujirushi](https://github.com/matsujirushi)!)
