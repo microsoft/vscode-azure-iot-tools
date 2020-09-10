@@ -2,3 +2,5 @@ node_modules
 *.vsix
 out
 npm-debug.log
+
+.vscode-test
