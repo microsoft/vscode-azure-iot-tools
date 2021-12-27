@@ -1,7 +1,5 @@
 const fs = require("fs");
 
-console.log(process.argv);
-
 const packageJson = JSON.parse(fs.readFileSync("package.json"));
 const indexOfDash = packageJson.version.indexOf("-");
 

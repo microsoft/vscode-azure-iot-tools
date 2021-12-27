@@ -80,14 +80,18 @@ stages:
     
     # modify package.json for releases / release-candidates
     - script: |
-        node scripts/modifyPackageJson.js name $(test_extension_name) displayName "$(test_display_name)" aiKey ${TEST_AIKEY} publisher $(test_publisher)
+        node scripts/modifyPackageJson.js name $(test_extension_name) displayName "$(test_display_name)" aiKey $ENV_AIKEY publisher $(test_publisher)
       displayName: Modify package.json for release candidates
       condition: and(succeeded(), contains(variables['VERSION_TAG'], 'rc'))
+      env:
+        ENV_AIKEY: $(TEST_AIKEY)
   
     - script: |
-        node scripts/modifyPackageJson.js aiKey ${PROD_AIKEY}
+        node scripts/modifyPackageJson.js aiKey $ENV_AIKEY
       displayName: Modify package.json for releases
       condition: and(succeeded(), not(contains(variables['VERSION_TAG'], 'rc')))
+      env:
+        ENV_AIKEY: $(PROD_AIKEY)
 
     # build and package
     - script: |
