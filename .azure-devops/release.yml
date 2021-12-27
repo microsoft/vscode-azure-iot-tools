@@ -82,12 +82,12 @@ stages:
     - script: |
         node scripts/modifyPackageJson.js name $(test_extension_name) displayName "$(test_display_name)" aiKey ${TEST_AIKEY} publisher $(test_publisher)
       displayName: Modify package.json for release candidates
-      condition: and(succeeded(), contains($(VERSION_TAG), 'rc'))
+      condition: and(succeeded(), contains(variables['VERSION_TAG'], 'rc'))
   
     - script: |
         node scripts/modifyPackageJson.js aiKey ${PROD_AIKEY}
       displayName: Modify package.json for releases
-      condition: and(succeeded(), not(contains($(VERSION_TAG), 'rc')))
+      condition: and(succeeded(), not(contains(variables['VERSION_TAG'], 'rc')))
 
     # build and package
     - script: |
@@ -138,7 +138,7 @@ stages:
     - bash: vsce publish -p $MARKETPLACE_TOKEN --packagePath *.vsix
       workingDirectory: '$(Build.ArtifactStagingDirectory)'
       displayName: Deploy releases to marketplace
-      condition: and(succeeded(),  eq(${{ parameters.publishExt }}, 'true'), not(contains($(VERSION_TAG), 'rc')))
+      condition: and(succeeded(),  eq(${{ parameters.publishExt }}, 'true'), not(contains(variables['VERSION_TAG'], 'rc')))
       env:
         MARKETPLACE_TOKEN: $(vsciot_marketplace_token)
       
