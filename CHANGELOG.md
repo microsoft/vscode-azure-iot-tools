@@ -1,3 +1,6 @@
+## Version 0.3.0 is the final version of this extension.
+Support for this extension will remain through November 2022.
+
 ## 0.3.0
 * Move the postion of 'What's New' section of Welcome Page
 

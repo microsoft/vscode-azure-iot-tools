@@ -1,4 +1,15 @@
 # Azure IoT Tools for Visual Studio Code
+
+## **End of Life / Support Notice**
+The 'Azure IoT Tools' collection is being retired after November 2022, and contains three extension packages that can still be downloaded individually:
+* [Azure IoT Hub Toolkit](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit)
+* [Azure IoT Edge](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge)
+* Azure IoT Workbench (support ending, older versions can still be downloaded from the [github releases page for the extension](https://github.com/microsoft/vscode-iot-workbench/releases))
+
+The repository has been archived and is read-only. Currently installed extensions will not be affected, but no new versions will be made available in the marketplace.
+
+Furthermore, after November 2022 users will no longer be able to install this extension collection from the marketplace.
+
 [Microsoft Azure IoT](https://azure.microsoft.com/en-us/overview/iot/
 ) support for Visual Studio Code is provided through a rich set of extensions that make it easy to discover and interact with Azure IoT Hub that power your IoT Edge and device applications.
 
