@@ -1,0 +1,48 @@
+
+name: CI
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:   
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        node-version: [12.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2.1.4
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: |
+            npm i
+            npm i -g vsce
+    - run: |
+        npm run compile
+        vsce package
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        node-version: [12.x]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2.1.4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm i
+      - run: npm run tslint
+      - run: npm run compile
+      - run: xvfb-run -a npm test
+        if: runner.os == 'Linux'
+      - run: npm test
+        if: runner.os != 'Linux'
