@@ -16,7 +16,7 @@ Furthermore, after November 2022 users will no longer be able to install this ex
 > If you do not have an Azure subscription, [sign up today](https://azure.microsoft.com/en-us/free/?b=16.48) for a free account. You'll get 12 months of popular free services, **$200** in Azure Credits to try out any combination of Azure services, and access to free services such as Azure IoT Hub, Azure IoT Edge, etc.
 
 ## What's New (v0.3.0)
-### Azure loT Hub Toolkit
+### Azure IoT Hub Toolkit
 ### Added
 * Update infrastructure to support localization (Thanks [@matsujirushi](https://github.com/matsujirushi)!)
 * Localization for Japanese language (Thanks [@matsujirushi](https://github.com/matsujirushi)!)
@@ -25,13 +25,13 @@ Furthermore, after November 2022 users will no longer be able to install this ex
 ### Changed
 * Use OS credential store to store IoT Hub connection string (To be more secure, we will no longer use `azure-iot-toolkit.iotHubConnectionString` in settings.json to store IoT Hub connection string)
 
-### Azure loT Edge
+### Azure IoT Edge
 ### Changed
 * ASA error message improvement
 * Rename 'tempSensor' to 'SimulatedTemperatureSensor'
 * Read connection string from API of Azure IoT Hub Toolkit
 
-### Azure loT Device Workbench
+### Azure IoT Device Workbench
 ### Added
 - We are excited to announce the preview of a new feature enabled in Azure IoT Device Workbench extension in VS Code to simplify the device cross-compiling toolchain acquisition effort for device developers working on embedded Linux devices (e.g. Debian, Ubuntu, Yocto Linux…) with Azure IoT by encapsulating the compilers, [device SDK](https://github.com/Azure/azure-iot-sdk-c) and essential libraries in [Containers](https://www.docker.com/resources/what-container). All you need is to install or upgrade the IoT Device Workbench and [get started](https://github.com/microsoft/vscode-iot-workbench/tree/containerized-toolchain-readme) developing within the container, just like today you are using a local environment.
 
@@ -41,11 +41,11 @@ Furthermore, after November 2022 users will no longer be able to install this ex
 Special thanks to [br1pro](https://github.com/br1pro) and [Remco Ploeg](https://github.com/rploeg), thanks for your feedbacks.
 
 ## Azure IoT Services
-- Develop and connect your [Azure loT Applications](https://azure.microsoft.com/en-us/overview/iot/) to Azure using the [Azure loT Toolkit](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit). With this extension, you can interact with an Azure loT Hub, manage connected devices, and enable distributed tracing for your Azure loT applications.
+- Develop and connect your [Azure IoT Applications](https://azure.microsoft.com/en-us/overview/iot/) to Azure using the [Azure IoT Toolkit](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit). With this extension, you can interact with an Azure IoT Hub, manage connected devices, and enable distributed tracing for your Azure IoT applications.
 
-- Develop and debug [Certifies Azure loT Devices](https://catalog.azureiotsolutions.com/alldevices) (including [MXChip loT DevKit](http://www.mxchip.com/az3166), [ESP32](https://catalog.azureiotsolutions.com/details?title=ESP32_DevKitC&source=all-devices-page), [Raspberry Pi](https://www.adafruit.com/category/288)) to Azure using the [Azure loT Device Workbench](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.vscode-iot-workbench). The loT Device Workbench extension makes it easy to code, build, deploy and debug your loT applications with popular loT development boards.
+- Develop and debug [Certifies Azure IoT Devices](https://catalog.azureiotsolutions.com/alldevices) (including [MXChip IoT DevKit](http://www.mxchip.com/az3166), [ESP32](https://catalog.azureiotsolutions.com/details?title=ESP32_DevKitC&source=all-devices-page), [Raspberry Pi](https://www.adafruit.com/category/288)) to Azure using the [Azure IoT Device Workbench](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.vscode-iot-workbench). The IoT Device Workbench extension makes it easy to code, build, deploy and debug your IoT applications with popular IoT development boards.
 
-- Develop and deploy artificial intelligence and your custom logic to [Azure loT Edge](https://azure.microsoft.com/en-us/services/iot-edge/) with [Azure loT Edge for VS Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge). Azure loT Edge extension makes it easy to code, build, deploy, and debug your loT Edge applications.
+- Develop and deploy artificial intelligence and your custom logic to [Azure IoT Edge](https://azure.microsoft.com/en-us/services/iot-edge/) with [Azure IoT Edge for VS Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge). Azure IoT Edge extension makes it easy to code, build, deploy, and debug your IoT Edge applications.
 
 ## Installation
 By installing this extension you will install all of the extensions listed above. Some of these extensions will have a dependency on the [Azure Account extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account) to provide a single Azure login and subscription filtering experience.
