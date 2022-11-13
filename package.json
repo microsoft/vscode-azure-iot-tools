@@ -61,7 +61,7 @@
         "typescript": "^2.6.1"
     },
     "dependencies": {
-        "mocha": "^8.2.1",
+        "mocha": "^10.1.0",
         "semver": "^5.6.0",
         "vscode-extension-telemetry": "^0.1.0",
         "vscode-test": "^1.4.1"
